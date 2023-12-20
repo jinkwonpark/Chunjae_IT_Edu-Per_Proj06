@@ -33,8 +33,6 @@ public class QNotice extends EntityPathBase<Notice> {
 
     public final StringPath title = createString("title");
 
-    public final StringPath writer = createString("writer");
-
     public QNotice(String variable) {
         super(Notice.class, forVariable(variable));
     }

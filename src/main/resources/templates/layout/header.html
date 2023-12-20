@@ -1,9 +1,9 @@
 <header th:fragment="header">
     <div class="container-fluid bg-light position-relative shadow">
         <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
-            <a href="" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px">
+            <a th:href="@{/}" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px">
                 <i class="flaticon-043-teddy-bear"></i>
-                <span class="text-primary" th:href="@{/}">ELITE CLASS</span>
+                <span class="text-primary">ELITE CLASS</span>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -17,15 +17,18 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">고객센터</a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="blog.html" class="dropdown-item">공지사항</a>
-                            <a href="single.html" class="dropdown-item">FAQ</a>
-                            <a href="single.html" class="dropdown-item">Q&A</a>
+                            <a th:href="@{/notice/noticeList}" class="dropdown-item">공지사항</a>
+                            <a th:href="@{/faq/faqList}" class="dropdown-item">FAQ</a>
+                            <a th:href="@{/qna/qnaList}" class="dropdown-item">Q&A</a>
                         </div>
                     </div>
                 </div>
-<!--                <th:if>마이페이지, 선생님페이지, 관리자 페이지</th:if>-->
-<!--                <th:if>로그아웃</th:if>-->
-                <a href="" class="btn btn-primary px-4">로그인</a>
+                <th:block sec:authorize="isAnonymous()">
+                    <a th:href="@{/member/login}" class="btn btn-primary px-4">로그인</a>
+                </th:block>
+                <th:block sec:authorize="isAuthenticated()">
+                    <a th:href="@{/member/logout}" class="btn btn-primary px-4">로그아웃</a>
+                </th:block>
             </div>
         </nav>
     </div>

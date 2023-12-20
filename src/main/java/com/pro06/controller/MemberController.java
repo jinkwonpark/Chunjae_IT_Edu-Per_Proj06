@@ -12,4 +12,9 @@ public class MemberController {
     public String loginForm(){
         return "member/login";
     }
+
+    @GetMapping("/term")
+    public String Term(){
+        return "member/term";
+    }
 }

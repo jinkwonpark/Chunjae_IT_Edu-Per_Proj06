@@ -8,6 +8,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -25,6 +26,7 @@ public class NoticeController {
     private final NoticeService noticeService;
 
     // 공지사항 목록
+//    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping({"notice", "/noticeList"})
     public String noticeList(PageRequestDTO pageRequestDTO, Model model){
         PageResponseDTO<NoticeDTO> responseDTO = noticeService.noticeList(pageRequestDTO);
@@ -42,12 +44,14 @@ public class NoticeController {
 
     // 공지사항 글쓰기
     @GetMapping("/noticeWrite")
-    public String noticeWriteForm() { return "notice/noticeWrite"; }
+    public String noticeWriteForm(){
+        return "notice/noticeWrite";
+    }
 
     @PostMapping("/noticeWrite")
     public String noticeWrite(@Valid NoticeDTO noticeDTO){
         noticeService.noticeWrite(noticeDTO);
-        return "redirect:/noticeList";
+        return "redirect:/notice/noticeList";
     }
 
     // 공지사항 수정하기
@@ -61,13 +65,13 @@ public class NoticeController {
     @PostMapping("/noticeEdit")
     public String noticeEdit(@Valid NoticeDTO noticeDTO){
         noticeService.noticeEdit(noticeDTO);
-        return "redirect:/noticeList";
+        return "redirect:/notice/noticeList";
     }
 
     // 공지사항 삭제하기
     @PostMapping("/noticeDelete")
     public String noticeDelete(Long nno){
         noticeService.noticeDelete(nno);
-        return "redirect:/noticeList";
+        return "redirect:/notice/noticeList";
     }
 }

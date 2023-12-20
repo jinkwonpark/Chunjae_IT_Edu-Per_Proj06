@@ -25,10 +25,6 @@ public class NoticeDTO {
     @Size(min = 1, max = 2000)
     private String content;
 
-    @NotEmpty
-    @Size(min = 1, max = 50)
-    private String writer;
-
     private LocalDateTime regDate;
 
     private LocalDateTime modDate;

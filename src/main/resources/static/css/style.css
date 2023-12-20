@@ -4535,7 +4535,7 @@ input[type="button"].btn-block {
 }
 
 .card-header:first-child {
-  border-radius: 4px 4px 0 0;
+  border-radius: 20px 20px 0 0;
 }
 
 .card-footer {
@@ -6538,8 +6538,8 @@ button.bg-dark:focus {
 }
 
 .rounded-bottom {
-  border-bottom-right-radius: 5px !important;
-  border-bottom-left-radius: 5px !important;
+  border-bottom-right-radius: 20px !important;
+  border-bottom-left-radius: 20px !important;
 }
 
 .rounded-left {
