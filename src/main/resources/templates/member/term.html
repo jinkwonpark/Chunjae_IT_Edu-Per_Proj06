@@ -39,11 +39,11 @@
     <!-- Banner Start -->
     <div class="container-fluid bg-primary mb-5">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-            <h3 class="display-3 font-weight-bold text-white">회원약관</h3>
+            <h3 class="display-3 font-weight-bold text-white">회원가입</h3>
             <div class="d-inline-flex text-white">
-                <p class="m-0"><a class="text-white" href="">회원가입</a></p>
+                <p class="m-0"><a class="text-white" href="">홈</a></p>
                 <p class="m-0 px-2">/</p>
-                <p class="m-0">회원약관</p>
+                <p class="m-0">회원가입</p>
             </div>
         </div>
     </div>
@@ -939,16 +939,14 @@
                 <input type="checkbox" id="ck_item2" name="ck_item2" class="form-check-input">
                 <label for="ck_item2" class="form-check-label">개인정보처리방침에 동의</label><br><br>
             </div>
-            <hr><br>
+            <hr>
             <div class="form-check">
                 <input type="checkbox" id="ck_item3" name="ck_item3" class="form-check-input" required>
                 <label for="ck_item3" class="form-check-label"><b>전체 약관에 동의</b></label>
             </div>
-            <br><hr><br>
+            <hr><br>
             <div class="form-check">
-                <!-- <a th:href="@{/user/join}">다음 단계</a> -->
-                <a th:href="@{/member/join}" class="btn btn-primary">다음</a>
-                <button type="button" id="in_btn1" class="button is-info">다음 단계</button>
+                <a th:href="@{/member/join}" id="in_btn1" class="btn btn-primary col-md-2 offset-md-5">다음</a>
             </div>
             <script th:inline="javascript">
                 var ck_item1 = document.getElementById("ck_item1");
@@ -956,9 +954,10 @@
                 var ck_item3 = document.getElementById("ck_item3");
                 var in_btn1 = document.getElementById("in_btn1");
 
-                in_btn1.addEventListener("click", function () {
+                in_btn1.addEventListener("click", function (event) {
+                    event.preventDefault(); // 기본 동작 막기
                     if (ck_item1.checked && ck_item2.checked) {
-                        location.href = "/user/join";
+                        location.href = "/member/join";
                     } else {
                         alert("약관 및 개인정보처리 방침에 동의하지 않으셨습니다.");
                         return;
@@ -994,5 +993,9 @@
     <!-- Footer Start -->
     <div th:replace="~{layout/footer :: footer}"></div>
     <!-- Footer End -->
+
+    <!-- js Start -->
+    <div th:replace="~{layout/js :: js}"></div>
+    <!-- js End -->
 </body>
 </html>
