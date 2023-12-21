@@ -61,12 +61,12 @@
                 <h1 class="text-white m-0">Welcome</h1>
               </div>
               <div class="card-body rounded-bottom bg-primary p-5">
-                <form>
+                <form method="post" action="/member/loginPro">
                   <div class="form-group">
-                    <input type="email" class="form-control border-0 p-4" placeholder="Your Email" maxlength="30" required/>
+                    <input type="text" id="username" name="username" class="form-control border-0 p-4" placeholder="Your Email" maxlength="30" required/>
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control border-0 p-4" placeholder="Your PassWord" maxlength="30" required/>
+                    <input type="password" id="password" name="password" class="form-control border-0 p-4" placeholder="Your PassWord" maxlength="30" required/>
                   </div>
                   <div class="d-flex justify-content-center">
                     <a th:href="@{/member/term}" class="btn btn-secondary" style="width: 100px;">회원가입</a>

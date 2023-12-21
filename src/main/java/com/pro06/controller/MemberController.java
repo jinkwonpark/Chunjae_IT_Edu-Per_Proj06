@@ -19,17 +19,17 @@ public class MemberController {
         return "member/login";
     }
 
-    // 회원약관
-    @GetMapping("/term")
-    public String Term(){
-        return "member/term";
-    }
-
-    // 회원가입
-    @GetMapping("/join")
-    public String joinForm(){
-        return "member/join";
-    }
+//    // 회원약관
+//    @GetMapping("/term")
+//    public String Term(){
+//        return "member/term";
+//    }
+//
+//    // 회원가입
+//    @GetMapping("/join")
+//    public String joinForm(){
+//        return "member/join";
+//    }
 
 //    @PostMapping("/join")
 //    public String join(){
