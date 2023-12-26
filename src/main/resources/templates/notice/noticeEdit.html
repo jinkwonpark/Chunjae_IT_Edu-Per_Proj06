@@ -50,7 +50,35 @@
     <!-- Banner End -->
 
     <!-- Main Start -->
-
+    <div  class="container">
+        <form th:action="@{'/notice/noticeEdit'}" method="post">
+            <table>
+                <tr>
+                    <th>제목</th>
+                    <td>
+                        <input type="hidden" name="nno" id="nno" th:value="${dto.nno}" >
+                        <input type="text" name="title" id="title" placeholder="제목을 입력해주세요." th:value="${dto.nno }" maxlength="50" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th>내용</th>
+                    <td>
+                        <textarea name="content" id="content" cols="30" rows="10" placeholder="내용을 입력해주세요." maxlength="1000" required>[[${dto.content}]]</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit">수정</button>
+                        &nbsp;
+                        <button type="reset">취소</button>
+                        &nbsp;
+                        <a href="/notice/noticeList">글목록1</a>
+                        <button type="button" onclick="location.href='/notice/noticeList'">글목록2</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
     <!-- Main End -->
 
     <!-- Footer Start -->

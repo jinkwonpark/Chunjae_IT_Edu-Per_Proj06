@@ -69,7 +69,7 @@ public class NoticeController {
     }
 
     // 공지사항 삭제하기
-    @PostMapping("/noticeDelete")
+    @GetMapping("/noticeDelete")
     public String noticeDelete(Long nno){
         noticeService.noticeDelete(nno);
         return "redirect:/notice/noticeList";

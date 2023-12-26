@@ -55,14 +55,24 @@
             <div class="col">
                 <div class="card-body">
                     <table class="table">
-                        <tr>번호</tr>
-                        td
+                        <tr>
+                            <th>번호</th>
+                            <td><span th:text="${dto.nno}"></span></td>
+                        </tr>
+                        <tr>
+                            <th>제목</th>
+                            <th><span th:text="${dto.title}"></span></th>
+                        </tr>
+                        <tr>
+                            <th>내용</th>
+                            <td><span th:text="${dto.content}"></span></td>
+                        </tr>
                     </table>
                     <div class="row">
                         <div class="col text-right">
                             <a th:href="@{/notice/noticeList}" class="btn btn-primary">글 목록</a>
-                            <a th:href="@{/notice/noticeEdit}" class="btn btn-primary">글 수정</a>
-                            <a th:href="@{/notice/noticeDelete?nno=}" class="btn btn-primary">글 수정</a>
+                            <a th:href="@{/notice/noticeEdit(nno=${dto.nno})}" class="btn btn-primary">글 수정</a>
+                            <a th:href="@{/notice/noticeDelete(nno=${dto.nno})}" class="btn btn-primary">글 삭제</a>
                         </div>
                     </div>
                 </div> <!-- end card body -->
