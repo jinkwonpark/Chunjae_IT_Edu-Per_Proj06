@@ -50,35 +50,34 @@
     <!-- Banner End -->
 
     <!-- Main Start -->
-    <div  class="container">
-        <form th:action="@{'/notice/noticeEdit'}" method="post">
-            <table>
-                <tr>
-                    <th>제목</th>
-                    <td>
-                        <input type="hidden" name="nno" id="nno" th:value="${dto.nno}" >
-                        <input type="text" name="title" id="title" placeholder="제목을 입력해주세요." th:value="${dto.nno }" maxlength="50" required>
-                    </td>
-                </tr>
-                <tr>
-                    <th>내용</th>
-                    <td>
-                        <textarea name="content" id="content" cols="30" rows="10" placeholder="내용을 입력해주세요." maxlength="1000" required>[[${dto.content}]]</textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <button type="submit">수정</button>
-                        &nbsp;
-                        <button type="reset">취소</button>
-                        &nbsp;
-                        <a href="/notice/noticeList">글목록1</a>
-                        <button type="button" onclick="location.href='/notice/noticeList'">글목록2</button>
-                    </td>
-                </tr>
-            </table>
-        </form>
-    </div>
+    <main style="width: 60%; margin: auto;">
+        <div  class="container">
+            <form th:action="@{'/notice/noticeEdit'}" method="post">
+                <table>
+                    <tr>
+                        <th>제목</th>
+                        <td>
+                            <input type="hidden" name="nno" id="nno" th:value="${dto.nno}" >
+                            <input type="text" name="title" id="title" placeholder="제목을 입력해주세요." th:value="${dto.nno }" maxlength="50" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>내용</th>
+                        <td>
+                            <textarea name="content" id="content" cols="30" rows="10" placeholder="내용을 입력해주세요." maxlength="1000" required>[[${dto.content}]]</textarea>
+                        </td>
+                    </tr>
+                    <div class="row">
+                        <div class="col text-right">
+                            <a th:href="@{/notice/noticeList}" class="btn btn-primary" style="width:80px;">글 목록</a>
+                            <button type="submit" class="btn btn-secondary" style="width:80px;">글 수정</button>
+                            <button type="reset" class="btn btn-danger" style="width:80px;">취소</button>
+                        </div>
+                    </div>
+                </table>
+            </form>
+        </div>
+    </main>
     <!-- Main End -->
 
     <!-- Footer Start -->

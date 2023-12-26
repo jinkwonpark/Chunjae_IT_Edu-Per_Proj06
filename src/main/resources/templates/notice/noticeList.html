@@ -96,11 +96,11 @@
                     </table>
                     <div class="row">
                         <div class="col text-right">
-                            <a th:href="@{/notice/noticeWrite}" class="btn btn-primary">글쓰기</a>
+                            <a th:href="@{/notice/noticeWrite}" class="btn btn-secondary">글쓰기</a>
                         </div>
                     </div>
                     <div class="float-end">
-                        <ul class="pagination flex-wrap">
+                        <ul class="pagination flex-wrap justify-content-center">
                             <li class="page-item" th:if="${responseDTO.prev}">
                                 <a class="page-link" th:data-num="${responseDTO.start -1}">Previous</a>
                             </li>

@@ -50,32 +50,29 @@
     <!-- Banner End -->
 
     <!-- Main Start -->
-    <div class="row mt-3">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <form action="/notice/noticeWrite" method="post">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">제목</span>
-                            <input type="text" name="title" class="form-control" required>
+    <main style="width: 60%; margin: auto;">
+        <div class="row mt-3">
+            <div class="col">
+                <form action="/notice/noticeWrite" method="post">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">제목</span>
+                        <input type="text" name="title" class="form-control" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">내용</span>
+                        <textarea class="form-control" rows="5" name="content" required></textarea>
+                    </div>
+                    <div class="row">
+                        <div class="col text-right">
+                            <a th:href="@{/notice/noticeList}" class="btn btn-primary" style="width:80px;">글 목록</a>
+                            <button type="submit" class="btn btn-secondary" style="width:80px;">글 쓰기</button>
+                            <button type="reset" class="btn btn-danger" style="width:80px;">취소</button>
                         </div>
-
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">내용</span>
-                            <textarea class="form-control col-sm-5" rows="5" name="content" required></textarea>
-                        </div>
-
-                        <div class="my-4">
-                            <div class="float-end">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                                <button type="reset" class="btn btn-secondary">Reset</button>
-                            </div>
-                        </div>
-                    </form>
-                </div> <!-- end card body -->
-            </div> <!-- end card -->
-        </div> <!-- end col -->
-    </div> <!-- end row -->
+                    </div>
+                </form>
+            </div> <!-- end col -->
+        </div> <!-- end row -->
+    </main>
     <!-- Main End -->
 
     <!-- Footer Start -->
